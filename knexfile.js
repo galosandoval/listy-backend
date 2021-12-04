@@ -24,7 +24,7 @@ module.exports = {
     client: "sqlite3",
     useNullAsDefault: true,
     connection: {
-      filename: "./data/howtos.db3"
+      filename: "./data/database.db3"
     },
     pool: {
       afterCreate: (conn, done) => {
