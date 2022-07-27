@@ -1,41 +1,31 @@
-// Update with your config settings.
-
 module.exports = {
   development: {
-    client: "sqlite3",
-    connection: {
-      filename: "./data/database.db3"
-    },
-    migrations: {
-      directory: "./data/migrations"
-    },
+    client: 'pg',
+    connection:
+      'postgresql://postgres:bck1Kayz2vHU8sFA1fso@containers-us-west-77.railway.app:6209/railway',
     seeds: {
-      directory: "./data/seeds"
+      directory: './data/seeds',
     },
-    pool: {
-      afterCreate: (conn, done) => {
-        conn.run("PRAGMA foreign_keys = ON", done);
-      }
+    useNullAsDefault: true,
+    pool: { min: 0, max: 7 },
+    migrations: {
+      directory: './data/migrations',
     },
-    useNullAsDefault: true
   },
 
   production: {
-    client: "sqlite3",
-    useNullAsDefault: true,
+    client: 'postgresql',
     connection: {
-      filename: "./data/database.db3"
+      database: 'my_db',
+      user: 'username',
+      password: 'password',
     },
     pool: {
-      afterCreate: (conn, done) => {
-        conn.run("PRAGMA foreign_keys = ON", done);
-      }
+      min: 2,
+      max: 10,
     },
     migrations: {
-      directory: "./data/migrations"
+      tableName: 'knex_migrations',
     },
-    seeds: {
-      directory: "./data/seeds"
-    }
-  }
-};
+  },
+}

@@ -13,17 +13,16 @@
     "jsonwebtoken": "^8.5.1",
     "knex": "^0.21.21",
     "morgan": "^1.10.0",
+    "pg": "^8.7.3",
     "sqlite3": "^5.0.2"
   },
   "nodemonConfig": {
     "restartable": "rs",
-    "delay": 2500,
-    "env": {
-      "PORT": 4000
-    }
+    "delay": 2500
   },
   "devDependencies": {
-    "nodemon": "^2.0.12"
+    "nodemon": "^2.0.12",
+    "typescript": "^4.7.4"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
