@@ -1,5 +1,5 @@
 {
-  "name": "reminder-joes-server",
+  "name": "listy-server",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,6 +8,7 @@
     "chalk": "^4.1.2",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
+    "eslint-plugin-import": "^2.26.0",
     "express": "^4.17.1",
     "helmet": "^4.6.0",
     "jsonwebtoken": "^8.5.1",
@@ -21,13 +22,17 @@
     "delay": 2500
   },
   "devDependencies": {
-    "nodemon": "^2.0.12",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/node": "^18.7.11",
+    "concurrently": "^7.3.0",
+    "nodemon": "^2.0.19",
     "typescript": "^4.7.4"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
-    "dev": "nodemon --trace-warnings index.js"
+    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\""
   },
   "author": "",
   "license": "ISC"
