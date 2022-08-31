@@ -1,8 +1,9 @@
 import express, { Express, Request, Response } from 'express'
 import dotenv from 'dotenv'
 import helmet from 'helmet'
+import morgan from 'morgan'
 import cors from 'cors'
-import { listsRouter, recipesRouter } from './routes'
+import { listsRouter, recipesRouter, ingredientsRouter } from './routes'
 
 dotenv.config()
 
@@ -14,6 +15,7 @@ app.get('/', (_req: Request, res: Response) => {
 })
 
 app.use(helmet())
+app.use(morgan('tiny'))
 app.use(express.json())
 app.use(
   cors({

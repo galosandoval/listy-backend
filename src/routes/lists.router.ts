@@ -1,4 +1,3 @@
-// import express from 'express'
 import express, { Router } from 'express'
 import { listsController } from '../controllers'
 const router = express.Router()
