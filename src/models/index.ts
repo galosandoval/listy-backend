@@ -1,3 +1,6 @@
 export * as Lists from './lists.model'
 export * as Recipes from './recipes.model'
 export * as Ingredients from './ingredients.model'
+export * as ListRecipes from './list-recipes.model'
+export * as Users from './users.model'
+export * as Directions from './directions.model'

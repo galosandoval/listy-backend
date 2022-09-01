@@ -1,21 +1,47 @@
-// const db = require("../../data/connection");
+export const findUserById = (userId: string) => {
+  const user = users.find((u) => u.id === userId)
+  return Promise.resolve(user)
+}
 
-// const findUsers = () => db("users");
+export const addUser = (newUser: Omit<User, 'id'>) => {
+  users.push({
+    ...newUser,
+    id: '4'
+  })
+  return Promise.resolve({
+    ...newUser,
+    id: '4'
+  })
+}
 
-// const findUserById = (id) => db("users").where({ id });
+export type User = {
+  id: string
+  firstName: string
+  lastName: string
+  username: string
+  password: string
+}
 
-// const findUserByUsername = (username) => db("users").where({ username });
-
-// const addUser = (creds) =>
-//   db("users")
-//     .insert(creds)
-//     .then((newUserId) => {
-//       return findUserById(newUserId);
-//     });
-
-// module.exports = {
-//   findUsers,
-//   findUserById,
-//   addUser,
-//   findUserByUsername
-// };
+export let users = [
+  {
+    id: '1',
+    firstName: 'Galo',
+    lastName: 'Sandoval',
+    username: 'demo',
+    password: 'password'
+  },
+  {
+    id: '2',
+    firstName: 'Raymond',
+    lastName: 'Rowe',
+    username: 'rowe@gmail.com',
+    password: 'password'
+  },
+  {
+    id: '3',
+    firstName: 'Kendrick',
+    lastName: 'Lamar',
+    username: 'kendrick@gmail.com',
+    password: 'password'
+  }
+]

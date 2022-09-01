@@ -1,48 +1,3 @@
-// const db = require("../../data/connection");
-
-let recipes: Recipe[] = [
-  {
-    address: 'recipes.com',
-    author: 'alton brown',
-    createdOn: 'now',
-    description: 'A damn good recipe',
-    id: '1',
-    imgUrl: 'heres an image url',
-    name: 'Good good',
-    userId: '1',
-  },
-  {
-    address: 'recipes.com',
-    author: 'alton brown',
-    createdOn: 'now',
-    description: 'A decent good recipe',
-    id: '2',
-    imgUrl: 'heres an image url',
-    name: 'That Good good',
-    userId: '1',
-  },
-  {
-    address: 'recipes.com',
-    author: 'galo sandoval',
-    createdOn: 'now',
-    description: 'A pretty good recipe',
-    id: '3',
-    imgUrl: 'heres an image url',
-    name: 'Good good',
-    userId: '1',
-  },
-  {
-    address: 'recipes.com',
-    author: 'alton brown',
-    createdOn: 'now',
-    description: 'A damn good recipe',
-    id: '4',
-    imgUrl: 'heres an image url',
-    name: 'Good good',
-    userId: '1',
-  },
-]
-
 export type Recipe = {
   id: string
   name: string
@@ -72,7 +27,7 @@ export const addRecipe = (recipe: AddRecipeParams) => {
   const recipeToAdd: Recipe = {
     ...recipe,
     createdOn: 'now',
-    id: '5',
+    id: '5'
   }
   recipes.push(recipeToAdd)
   return Promise.resolve(recipes)
@@ -94,29 +49,53 @@ export const updateRecipe = (updates: Partial<Recipe>) => {
   return Promise.resolve(recipes[foundIndex])
 }
 
-// const findIngredientsByRecipeId = (id) => {
-//   return db(recipes)
-//     .join('ingredients', 'recipes.id', '=', 'ingredients.recipe-id')
-//     .select(
-//       'ingredients.name',
-//       'ingredients.id',
-//       'recipes.id as recipe-id',
-//       'ingredients.isChecked'
-//     )
-//     .where('recipes.id', id)
-// }
-
-// const findRecipesByUserId = (userId) => {
-//   return db(recipes)
-//     .join('users', 'users.id', '=', 'recipes.user-id')
-//     .whereIn('user-id', [userId === 1 ? 1 : 1, userId])
-//     .select(
-//       'recipes.id',
-//       'recipes.recipe-name',
-//       'recipes.description',
-//       'recipes.img-url',
-//       'recipes.user-id',
-//       'recipes.address',
-//       'recipes.author'
-//     )
-// }
+let recipes: Recipe[] = [
+  {
+    id: '1',
+    name: 'CREAMY MUSHROOM TOAST WITH SOFT EGG & GRUYÈRE',
+    description:
+      'A twist on the beloved British favorite, delightfully simple and absolutely delicious for breakfast, brunch, lunch, or even dinner.',
+    imgUrl:
+      'https://www.gordonramsay.com/assets/Uploads/_resampled/CroppedFocusedImage192072050-50-Mushroomtoast.jpg',
+    author: 'gordon ramsay',
+    address: 'https://www.gordonramsay.com/gr/recipes/mushroomtoast/',
+    userId: '1',
+    createdOn: 'sometime'
+  },
+  {
+    id: '2',
+    name: "the only ice cream recipe you'll ever need",
+    description:
+      'This silky, luscious and very classic custard can be used as the base for any ice cream flavor you can dream up. These particular proportions of milk and cream to egg yolk will give you a thick but not sticky ice cream that feels decadent but not heavy. For something a little lighter, use more milk and less cream, as long as the dairy adds up to 3 cups. You can also cut down on egg yolks for a thinner base, but don’t go below three.',
+    imgUrl:
+      'https://static01.nyt.com/images/2014/06/27/multimedia/clark-icecream/clark-icecream-articleLarge.jpg',
+    author: 'melissa clark',
+    address:
+      'https://cooking.nytimes.com/recipes/1016605-the-only-ice-cream-recipe-youll-ever-need',
+    userId: '1',
+    createdOn: 'sometime'
+  },
+  {
+    id: '3',
+    name: 'Spinach Lentil Dal',
+    description:
+      'This Lentil Dal with Spinach Sauce is one of the most delicious, soul-satisfying plant-based, Indian meals! This version is fragrant, flavorful and packed with nutrients- think of this like Saag Paneer, but substituting black lentils instead of the cheese! Super tasty and healthy',
+    userId: '1',
+    createdOn: 'sometime',
+    author: 'sylvia fountaine',
+    address: 'https://www.feastingathome.com/lentil-dal-with-spinach/',
+    imgUrl:
+      'https://www.feastingathome.com/wp-content/uploads/2020/06/Lentil-Dal-15.jpg'
+  },
+  {
+    id: '4',
+    name: 'PB&J',
+    description: 'Simple, yet classic treat.',
+    userId: '1',
+    createdOn: 'sometime',
+    address: 'https://www.feastingathome.com/lentil-dal-with-spinach/',
+    imgUrl:
+      'https://data.thefeedfeed.com/static/other/15360644095b8e7b992bf55.jpg',
+    author: 'Galo sandoval'
+  }
+]

@@ -3,7 +3,14 @@ import dotenv from 'dotenv'
 import helmet from 'helmet'
 import morgan from 'morgan'
 import cors from 'cors'
-import { listsRouter, recipesRouter, ingredientsRouter } from './routes'
+import {
+  listsRouter,
+  recipesRouter,
+  ingredientsRouter,
+  usersRouter
+} from './routes'
+import { directionsRouter } from './routes/directions.router'
+import { listRecipesRouter } from './routes/listRecipes.router'
 
 dotenv.config()
 
@@ -20,13 +27,16 @@ app.use(express.json())
 app.use(
   cors({
     origin: '*',
-    credentials: true,
+    credentials: true
   })
 )
 
 app.use('/lists', listsRouter)
 app.use('/recipes', recipesRouter)
 app.use('/ingredients', ingredientsRouter)
+app.use('/directions', directionsRouter)
+app.use('/list-recipes', listRecipesRouter)
+app.use('/users', usersRouter)
 
 app.listen(port, () => {
   console.log(`⚡️[server]: Server is running at https://localhost:${port}`)
