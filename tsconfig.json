@@ -11,7 +11,9 @@
     "skipLibCheck": true /* Skip type checking all .d.ts files. */,
     "forceConsistentCasingInFileNames": true,
     "noImplicitAny": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "lib": ["esnext"]
   },
   "files": ["./node_modules/@types/node/index.d.ts"],
   "include": ["src/**/*.ts"],
