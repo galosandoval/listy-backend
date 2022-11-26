@@ -10,7 +10,7 @@ import {
   usersRouter
 } from './routes'
 import { directionsRouter } from './routes/directions.router'
-import { listRecipesRouter } from './routes/listRecipes.router'
+import { listRecipesRouter } from './routes/list-recipes.router'
 
 dotenv.config()
 
