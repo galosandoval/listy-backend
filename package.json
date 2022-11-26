@@ -2,8 +2,9 @@
   "name": "listy-server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/app",
   "dependencies": {
+    "@prisma/client": "^4.6.1",
     "bcryptjs": "^2.4.3",
     "chalk": "^4.1.2",
     "cors": "^2.8.5",
@@ -25,16 +26,20 @@
     "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
     "@types/morgan": "^1.9.3",
-    "@types/node": "^18.7.11",
+    "@types/node": "^18.11.9",
     "concurrently": "^7.3.0",
     "nodemon": "^2.0.19",
     "prisma": "^4.6.1",
-    "typescript": "^4.7.4"
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.3"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
     "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/app.js\""
+  },
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
   },
   "author": "",
   "license": "ISC"

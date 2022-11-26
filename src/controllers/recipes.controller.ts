@@ -1,5 +1,6 @@
 import { NextFunction, Request, Response } from 'express'
 import { Recipes } from '../models'
+import { AddRecipeParams } from '../models/recipes.model'
 
 export const get = async (_req: Request, res: Response, next: NextFunction) => {
   try {
