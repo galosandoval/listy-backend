@@ -36,7 +36,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
-    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/app.js\""
+    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/app.js\"",
+    "seed": "npx prisma db seed",
+    "migrate": "npx prisma migrate dev",
+    "migrate-reset": "npx prisma migrate reset"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
