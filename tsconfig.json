@@ -16,6 +16,6 @@
     "lib": ["esnext"]
   },
   "files": ["./node_modules/@types/node/index.d.ts"],
-  "include": ["src/**/*.ts"],
+  "include": ["src/**/*.ts", "app.ts"],
   "exclude": ["node_modules"]
 }

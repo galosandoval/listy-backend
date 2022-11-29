@@ -5,12 +5,12 @@ import morgan from 'morgan'
 import cors from 'cors'
 import {
   listsRouter,
-  recipesRouter,
+  instructionsRouter,
   ingredientsRouter,
+  recipesOnListRouter,
+  recipesRouter,
   usersRouter
-} from './routes'
-import { directionsRouter } from './routes/directions.router'
-import { listRecipesRouter } from './routes/list-recipes.router'
+} from './src'
 
 dotenv.config()
 
@@ -34,8 +34,8 @@ app.use(
 app.use('/lists', listsRouter)
 app.use('/recipes', recipesRouter)
 app.use('/ingredients', ingredientsRouter)
-app.use('/directions', directionsRouter)
-app.use('/list-recipes', listRecipesRouter)
+app.use('/instructions', instructionsRouter)
+app.use('/recipes-on-list', recipesOnListRouter)
 app.use('/users', usersRouter)
 
 app.listen(port, () => {
